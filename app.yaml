@@ -1,0 +1,9 @@
+runtime: python312
+entrypoint: gunicorn -b :$PORT capstone
+.wsgi
+
+handlers:
+- url: /static
+  static_dir: static/
+- url: /.*
+  script: auto
